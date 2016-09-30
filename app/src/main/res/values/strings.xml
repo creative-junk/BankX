@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Bank X</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_banks">Banks in Kenya</string>
+    <string name="title_activity_insurance">Insurance Agencies in Kenya</string>
+    <string name="title_activity_micro_finance">Micro Finance in Kenya</string>
+    <string name="title_activity_government">Government</string>
+    <string name="title_activity_investment_bank">Investment Banks</string>
+    <string name="title_activity_international_banks">International Banks</string>
+    <string name="title_activity_capital_markets">Capital Market</string>
+    <string name="title_activity_bank_details">Bank Details</string>
+    <string name="title_activity_company">Company Details</string>
+    <string name="title_activity_agency_details">Agency Details</string>
 </resources>

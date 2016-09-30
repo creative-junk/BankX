@@ -21,6 +21,7 @@ public class InvestmentBankModel implements Parcelable {
     private String investmentBankWebsite;
     private String investmentBankObjectId;
     private String investmentBankStatus;
+    private String investmentBankSummary;
 
     public String getInvestmentBankObjectId() {
         return investmentBankObjectId;
@@ -33,7 +34,7 @@ public class InvestmentBankModel implements Parcelable {
 
     public InvestmentBankModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         investmentBankName = array[0];
@@ -48,6 +49,7 @@ public class InvestmentBankModel implements Parcelable {
         investmentBankWebsite = array[9];
         investmentBankObjectId = array[10];
         investmentBankStatus = array[11];
+        investmentBankSummary = array[12];
     }
 
     public InvestmentBankModel() {
@@ -77,6 +79,14 @@ public class InvestmentBankModel implements Parcelable {
 
     public void setInvestmentBankName(String investmentBankName) {
         this.investmentBankName = investmentBankName;
+    }
+
+    public String getInvestmentBankSummary() {
+        return investmentBankSummary;
+    }
+
+    public void setInvestmentBankSummary(String investmentBankSummary) {
+        this.investmentBankSummary = investmentBankSummary;
     }
 
     public String getInvestmentBankImage() {
@@ -174,6 +184,7 @@ public class InvestmentBankModel implements Parcelable {
                 this.investmentBankType,
                 this.investmentBankWebsite,
                 this.investmentBankObjectId,
-                this.investmentBankStatus});
+                this.investmentBankStatus,
+                this.investmentBankSummary});
     }
 }

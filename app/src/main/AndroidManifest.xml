@@ -2,7 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.crysoft.me.bankx">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,6 +23,81 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".BanksActivity"
+            android:label="@string/title_activity_banks"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".InsuranceActivity"
+            android:label="@string/title_activity_insurance"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MicroFinanceActivity"
+            android:label="@string/title_activity_micro_finance"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GovernmentActivity"
+            android:label="@string/title_activity_government"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".InvestmentBankActivity"
+            android:label="@string/title_activity_investment_bank"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".InternationalBanksActivity"
+            android:label="@string/title_activity_international_banks"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CapitalMarketsActivity"
+            android:label="@string/title_activity_capital_markets"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crysoft.me.bankx.MainActivity" />
+        </activity>
+        <activity
+            android:name=".BankDetailsActivity"
+            android:label="@string/title_activity_bank_details"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CompanyDetailsActivity"
+            android:label="@string/title_activity_company"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AgencyDetailsActivity"
+            android:label="@string/title_activity_agency_details"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

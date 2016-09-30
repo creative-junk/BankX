@@ -21,6 +21,7 @@ public class BankModel implements Parcelable {
     private String bankWebsite;
     private String bankObjectId;
     private String bankStatus;
+    private String bankSummary;
 
     public String getBankStatus() {
         return bankStatus;
@@ -119,16 +120,24 @@ public class BankModel implements Parcelable {
     }
 
 
+    public String getBankSummary() {
+        return bankSummary;
+    }
+
+    public void setBankSummary(String bankSummary) {
+        this.bankSummary = bankSummary;
+    }
 
     public BankModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         bankName = array[0];
         bankImage = array[1];
         bankAddress = array[2];
         bankSwiftCode = array[3];
+
         bankStockCode = array[4];
         bankDescription = array[5];
         bankEstablished = array[6];
@@ -137,6 +146,7 @@ public class BankModel implements Parcelable {
         bankWebsite = array[9];
         bankObjectId = array[10];
         bankStatus = array[11];
+        bankSummary = array[12];
     }
 
     public BankModel() {
@@ -174,6 +184,7 @@ public class BankModel implements Parcelable {
                 this.bankType,
                 this.bankWebsite,
                 this.bankObjectId,
-                this.bankStatus});
+                this.bankStatus,
+                this.bankSummary});
     }
 }

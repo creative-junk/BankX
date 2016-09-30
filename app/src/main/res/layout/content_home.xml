@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="com.crysoft.me.bankx.MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar"
+        android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLEASE SELECT A FINANCIAL CATEGORY"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Banks"
+                    android:onClick="findBanks" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Insurance Agencies"
+                    android:onClick="findInsuranceAgencies" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Micro Finance"
+                    android:onClick="findMicroFinance" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Government" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Investment Banks"
+                    android:onClick="findInvestmentBanks" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="International Banks"
+                    android:onClick="findInternationalBanks" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/primaryTextView"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Capital Markets"
+                    android:onClick="findListedCompanies" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:src="@drawable/pointer" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

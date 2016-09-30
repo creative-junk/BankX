@@ -21,6 +21,7 @@ public class CapitalMarketsModel implements Parcelable {
     private String companyWebsite;
     private String companyObjectId;
     private String companyStatus;
+    private String companySummary;
 
     public String getCompanyStatus() {
         return companyStatus;
@@ -44,7 +45,7 @@ public class CapitalMarketsModel implements Parcelable {
 
     public CapitalMarketsModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         companyName = array[0];
@@ -59,6 +60,7 @@ public class CapitalMarketsModel implements Parcelable {
         companyWebsite = array[9];
         companyObjectId = array[10];
         companyStatus = array[11];
+        companySummary = array[12];
     }
 
     public CapitalMarketsModel() {
@@ -162,6 +164,14 @@ public class CapitalMarketsModel implements Parcelable {
         this.companyWebsite = companyWebsite;
     }
 
+    public String getCompanySummary() {
+        return companySummary;
+    }
+
+    public void setCompanySummary(String companySummary) {
+        this.companySummary = companySummary;
+    }
+
     @Override
 
     public void writeToParcel(Parcel dest, int flags) {
@@ -177,6 +187,7 @@ public class CapitalMarketsModel implements Parcelable {
                 this.companyType,
                 this.companyWebsite,
                 this.companyObjectId,
-                this.companyStatus});
+                this.companyStatus,
+                this.companySummary});
     }
 }

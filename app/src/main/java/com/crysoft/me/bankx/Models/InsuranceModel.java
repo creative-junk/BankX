@@ -21,13 +21,13 @@ public class InsuranceModel implements Parcelable{
     private String insuranceWebsite;
     private String insuranceObjectId;
     private String insuranceStatus;
-
+    private String insuranceSummary;
 
 
     public InsuranceModel(Parcel in) {
 
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         insuranceName = array[0];
@@ -42,6 +42,7 @@ public class InsuranceModel implements Parcelable{
         insuranceWebsite = array[9];
         insuranceObjectId = array[10];
         insuranceStatus = array[11];
+        insuranceSummary = array[12];
     }
 
     public InsuranceModel() {
@@ -71,7 +72,13 @@ public class InsuranceModel implements Parcelable{
     public String getInsuranceStatus() {
         return insuranceStatus;
     }
+    public String getInsuranceSummary() {
+        return insuranceSummary;
+    }
 
+    public void setInsuranceSummary(String insuranceSummary) {
+        this.insuranceSummary = insuranceSummary;
+    }
     public void setInsuranceStatus(String insuranceStatus) {
         this.insuranceStatus = insuranceStatus;
     }
@@ -174,6 +181,9 @@ public class InsuranceModel implements Parcelable{
                 this.insuranceType,
                 this.insuranceWebsite,
                 this.insuranceObjectId,
-                this.insuranceStatus});
+                this.insuranceStatus,
+                this.insuranceSummary});
     }
+
+
 }

@@ -20,6 +20,7 @@ public class MicroFinanceModel implements Parcelable{
     private String microFinanceType;
     private String microFinanceWebsite;
     private String microFinanceObjectId;
+    private String microFinanceSummary;
 
     public String getMicroFinanceStatus() {
         return microFinanceStatus;
@@ -68,7 +69,16 @@ public class MicroFinanceModel implements Parcelable{
         return microFinanceSwiftCode;
     }
 
+    public String getMicroFinanceSummary() {
+        return microFinanceSummary;
+    }
+
+    public void setMicroFinanceSummary(String microFinanceSummary) {
+        this.microFinanceSummary = microFinanceSummary;
+    }
+
     public void setMicroFinanceSwiftCode(String microFinanceSwiftCode) {
+
         this.microFinanceSwiftCode = microFinanceSwiftCode;
     }
 
@@ -123,7 +133,7 @@ public class MicroFinanceModel implements Parcelable{
 
     public MicroFinanceModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         microFinanceName = array[0];
@@ -138,6 +148,7 @@ public class MicroFinanceModel implements Parcelable{
         microFinanceWebsite = array[9];
         microFinanceObjectId = array[10];
         microFinanceStatus = array[11];
+        microFinanceSummary = array[12];
     }
 
     public MicroFinanceModel() {
@@ -175,6 +186,7 @@ public class MicroFinanceModel implements Parcelable{
                 this.microFinanceType,
                 this.microFinanceWebsite,
                 this.microFinanceObjectId,
-                this.microFinanceStatus});
+                this.microFinanceStatus,
+                this.microFinanceSummary});
     }
 }

@@ -18,9 +18,19 @@ public class InternationalBankModel implements Parcelable{
     private String internationalBankEstablished;
     private String internationalBankContacts;
     private String internationalBankType;
+
+    public String getInternationalBankSummary() {
+        return internationalBankSummary;
+    }
+
+    public void setInternationalBankSummary(String internationalBankSummary) {
+        this.internationalBankSummary = internationalBankSummary;
+    }
+
     private String internationalBankWebsite;
     private String internationalBankObjectId;
     private String internationalBankStatus;
+    private String internationalBankSummary;
 
     public String getInternationalBankStatus() {
         return internationalBankStatus;
@@ -42,7 +52,7 @@ public class InternationalBankModel implements Parcelable{
 
     public InternationalBankModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         internationalBankName = array[0];
@@ -57,6 +67,7 @@ public class InternationalBankModel implements Parcelable{
         internationalBankWebsite = array[9];
         internationalBankObjectId = array[10];
         internationalBankStatus = array[11];
+        internationalBankSummary = array[12];
     }
 
     public InternationalBankModel() {
@@ -175,6 +186,7 @@ public class InternationalBankModel implements Parcelable{
                 this.internationalBankType,
                 this.internationalBankWebsite,
                 this.internationalBankObjectId,
-                this.internationalBankStatus});
+                this.internationalBankStatus,
+                this.internationalBankSummary});
     }
 }

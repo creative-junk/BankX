@@ -21,6 +21,7 @@ public class ForexBureauModel implements Parcelable {
     private String forexBureauType;
     private String forexBureauWebsite;
     private String forexBureauStatus;
+    private String forexBureauSummary;
 
     public String getForexBureauStatus() {
         return forexBureauStatus;
@@ -42,7 +43,7 @@ public class ForexBureauModel implements Parcelable {
 
     public ForexBureauModel(Parcel in) {
 
-        String[] array = new String[12];
+        String[] array = new String[13];
         in.readStringArray(array);
 
         forexBureauName = array[0];
@@ -57,6 +58,7 @@ public class ForexBureauModel implements Parcelable {
         forexBureauWebsite = array[9];
         forexBureauObjectId = array[10];
         forexBureauStatus = array[11];
+        forexBureauSummary = array[12];
     }
 
     public ForexBureauModel() {
@@ -114,6 +116,14 @@ public class ForexBureauModel implements Parcelable {
 
     public String getForexBureauStockCode() {
         return forexBureauStockCode;
+    }
+
+    public String getForexBureauSummary() {
+        return forexBureauSummary;
+    }
+
+    public void setForexBureauSummary(String forexBureauSummary) {
+        this.forexBureauSummary = forexBureauSummary;
     }
 
     public void setForexBureauStockCode(String forexBureauStockCode) {
@@ -175,6 +185,7 @@ public class ForexBureauModel implements Parcelable {
                 this.forexBureauType,
                 this.forexBureauWebsite,
                 this.forexBureauObjectId,
-                this.forexBureauStatus});
+                this.forexBureauStatus,
+                this.forexBureauSummary});
     }
 }
