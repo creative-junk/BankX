@@ -11,11 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.crysoft.me.bankx.helpers.CircleImageView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Toolbar mToolBar;
+    private ViewFlipper mViewFlipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +42,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+
+
+        mViewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
+
+        mViewFlipper.setAutoStart(true);
+        mViewFlipper.startFlipping();
 
     }
 

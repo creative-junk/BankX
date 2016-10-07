@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ViewFlipper;
 
 import com.crysoft.me.bankx.Models.BankModel;
 import com.crysoft.me.bankx.adapters.BanksAdapter;
@@ -34,6 +35,8 @@ public class BanksActivity extends AppCompatActivity {
     private GridView gridView;
     SearchView bankSearch;
     private LinearLayout emptyBankList;
+    private ViewFlipper mViewFlipper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +45,26 @@ public class BanksActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mViewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
+
+        mViewFlipper.setAutoStart(true);
+        mViewFlipper.startFlipping();
+
         gridView= (GridView) findViewById(R.id.banksList);
         emptyBankList = (LinearLayout) findViewById(R.id.emptyBankList);
         bankSearch =(SearchView) findViewById(R.id.svBankSearch);
+        bankSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                banksAdapter.getFilter().filter(s.toString());
+                return false;
+            }
+        });
 
 
         databaseAdapter = DBAdapter.getInstance(this);
@@ -100,6 +119,7 @@ public class BanksActivity extends AppCompatActivity {
                         bankDetails.setBankWebsite(bank.getString("bank_website"));
                         bankDetails.setBankStatus(bank.getString("bank_status"));
                         bankDetails.setBankSummary(bank.getString("bank_summary"));
+                        bankDetails.setBankProducts(bank.getString("bank_products"));
                         banksList.add(bankDetails);
                     }
                     databaseAdapter.updateAllBanks(banksList);

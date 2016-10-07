@@ -31,7 +31,7 @@ public class DBAdapter extends SQLiteOpenHelper {
 
     //Database Information
     private static final String DATABASE_NAME = "bankx";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     //Table Names
     private static final String TABLE_BANKS = "banks";
     private static final String TABLE_INSURANCE = "insurance_agencies";
@@ -60,7 +60,7 @@ public class DBAdapter extends SQLiteOpenHelper {
     private static final String KEY_BANK_TYPE = "bank_type";
     private static final String KEY_BANK_WEBSITE = "bank_website";
     private static final String KEY_BANK_STATUS = "bank_status";
-
+    private static final String KEY_BANK_PRODUCTS = "bank_products";
 
     //insurance table columns
     private static final String KEY_INSURANCE_ID = "_id";
@@ -239,6 +239,7 @@ public class DBAdapter extends SQLiteOpenHelper {
                 KEY_BANK_TYPE + " TEXT," +
                 KEY_BANK_STATUS + " TEXT," +
                 KEY_BANK_SUMMARY + " TEXT," +
+                KEY_BANK_PRODUCTS + " TEXT," +
                 KEY_BANK_WEBSITE + " TEXT" +
                 ")";
         String CREATE_INSURANCE_TABLE = "CREATE TABLE " + TABLE_INSURANCE +
@@ -395,6 +396,8 @@ public class DBAdapter extends SQLiteOpenHelper {
             values.put(KEY_BANK_WEBSITE, bankDetails.getBankWebsite());
             values.put(KEY_BANK_STATUS, bankDetails.getBankStatus());
             values.put(KEY_BANK_SUMMARY, bankDetails.getBankSummary());
+            values.put(KEY_BANK_PRODUCTS, bankDetails.getBankProducts());
+
             //Let's try to update the Saved Product if it exists.
             int rows = db.update(TABLE_BANKS, values, KEY_BANK_OBJECT_ID + "= ?", new String[]{bankDetails.getBankObjectId()});
 
@@ -713,8 +716,8 @@ public class DBAdapter extends SQLiteOpenHelper {
         List<BankModel> banksList = new ArrayList<BankModel>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_BANKS, new String[]{
-                KEY_BANK_ID, KEY_BANK_OBJECT_ID, KEY_BANK_NAME, KEY_BANK_IMAGE, KEY_BANK_ADDRESS, KEY_BANK_STATUS,KEY_BANK_SUMMARY
-        }, null, null, null, null, null);
+                KEY_BANK_ID, KEY_BANK_OBJECT_ID, KEY_BANK_NAME, KEY_BANK_IMAGE, KEY_BANK_ADDRESS,KEY_BANK_SWIFT_CODE,KEY_BANK_STOCK_CODE,KEY_BANK_DESCRIPTION,KEY_BANK_ESTABLISHED,KEY_BANK_CONTACTS,KEY_BANK_TYPE,KEY_BANK_WEBSITE,KEY_BANK_STATUS,KEY_BANK_SUMMARY,KEY_BANK_PRODUCTS
+        }, null, null, null, null, KEY_BANK_NAME+" ASC");
         try {
             if (cursor.moveToFirst()) {
                 do {
@@ -723,8 +726,16 @@ public class DBAdapter extends SQLiteOpenHelper {
                     bankDetails.setBankName(cursor.getString(2));
                     bankDetails.setBankImage(cursor.getString(3));
                     bankDetails.setBankAddress(cursor.getString(4));
-                    bankDetails.setBankStatus(cursor.getString(5));
-                    bankDetails.setBankSummary(cursor.getString(6));
+                    bankDetails.setBankSwiftCode(cursor.getString(5));
+                    bankDetails.setBankStockCode(cursor.getString(6));
+                    bankDetails.setBankDescription(cursor.getString(7));
+                    bankDetails.setBankEstablished(cursor.getString(8));
+                    bankDetails.setBankContacts(cursor.getString(9));
+                    bankDetails.setBankType(cursor.getString(10));
+                    bankDetails.setBankWebsite(cursor.getString(11));
+                    bankDetails.setBankStatus(cursor.getString(12));
+                    bankDetails.setBankSummary(cursor.getString(13));
+                    bankDetails.setBankProducts(cursor.getString(14));
                     banksList.add(bankDetails);
                 } while (cursor.moveToNext());
             }

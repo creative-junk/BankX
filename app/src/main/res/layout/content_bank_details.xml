@@ -5,12 +5,215 @@
     android:id="@+id/content_bank_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.crysoft.me.bankx.BankDetailsActivity"
     tools:showIn="@layout/activity_bank_details">
 
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_gravity="left|top"
+        android:flipInterval="5000"
+        android:inAnimation="@anim/slide_in_right"
+        android:outAnimation="@anim/slide_in_left">
+
+        <ImageView
+            android:id="@+id/ivFlipper1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner4" />
+
+        <ImageView
+            android:id="@+id/ivFlipper2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner5" />
+
+        <ImageView
+            android:id="@+id/ivFlipper3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner6" />
+
+    </ViewFlipper>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/viewFlipper">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/bankNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Bank: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bankName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Private"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/bankTypeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Type: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bankType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Private"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/bankStatusLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Status: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bankStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Active"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/bankFoundedLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Founded: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bankFounded"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1948"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:id="@+id/bankProductsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Products: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/bankProducts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Loans, Savings, Checking, Investments, Debit Cards, Mortgages"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="6dp">
+            <TextView
+                android:id="@+id/bankWebsiteLabel"
+                android:text="Website: "
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/bankWebsite"
+                android:text="www.abcthebank.com"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/bankDescriptionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Description"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/bankDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Description"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
